@@ -1,2 +1,4 @@
 /node_modules
 Cache
+/.idea
+.DS_Store
