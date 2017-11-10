@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import store from 'reducers/index';
-
+import 'assets/css/main.less'
 
 import Login from 'components/Login/Login';
 import Hall from 'components/Hall/Hall';

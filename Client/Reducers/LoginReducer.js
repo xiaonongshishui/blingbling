@@ -2,9 +2,11 @@ const initialState = {
     isLogin:false
 };
 
-export const LoginReducer = (state = initialState, action) =>{
+const LoginReducer = (state = initialState, action) =>{
     switch(action){
         default:
             return state;
     }
 };
+
+export default LoginReducer;
