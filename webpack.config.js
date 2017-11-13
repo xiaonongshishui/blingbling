@@ -30,11 +30,12 @@ var config = {
             {
                 test: /\.(less|css)$/,
                 use: ExtractTextPlugin.extract({
-                    use: ['style-loader', 'css-loader', {
+                    fallback: 'style-loader',
+                    use: ['css-loader', {
                         loader:'postcss-loader',
                         options:{
                             ident: 'postcss',
-                            plugins:[require('autoprefixer')]
+                            plugins:[require('autoprefixer')()]
                         }
                     }, 'less-loader']
                 })
@@ -49,6 +50,10 @@ var config = {
             {
                 test: /\.json$/,
                 use: ['json-loader']
+            },
+            {
+                test:/\.(eot|ttf|woff|woff2|svg|otf)$/,
+                use:'file-loader?name=fonts/[name].[ext]'
             }
         ]
     },

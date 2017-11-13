@@ -1,10 +1,12 @@
 import {combineReducers, createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 
-import LoginReducer from './LoginReducer';
+import { LoginReducer as login } from './LoginReducer';
+import { ChatRoomsReducer as chatRooms } from './ChatRoomsReducer';
 
 const reducers = combineReducers({
-    LoginReducer:LoginReducer
+    login,
+    chatRooms
 });
 
 const store = createStore(reducers, applyMiddleware(thunk));
