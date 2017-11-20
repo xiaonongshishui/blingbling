@@ -101,7 +101,8 @@ class Account extends Component {
                                         aria-hidden="true"
                                         style={{lineHeight:"24px"}}/>}
                           innerDivStyle={{paddingLeft:"40px"}}
-                          style={{color:"#fff"}}>
+                          style={{color:"#fff"}}
+                onClick={()=>{history.push('/account/password/1')}}>
                     <div className="right">去修改</div>
                 </ListItem>
             </List>
