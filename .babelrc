@@ -1,4 +1,10 @@
 {
   "presets": ["env","stage-0","react"],
-  "plugins": ["react-hot-loader/babel"]
+  "plugins": ["react-hot-loader/babel",
+    "transform-object-rest-spread",
+    "transform-export-extensions",
+    "transform-regenerator",
+    "transform-runtime"
+  ],
+  "sourceMaps": true
 }

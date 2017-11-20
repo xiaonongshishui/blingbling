@@ -10,7 +10,7 @@ import FlatButton from 'material-ui/FlatButton';
 
 
 
-class AccountSettingNickname extends Component {
+class AccountSettingPassword extends Component {
     constructor(props) {
         super(props);
     }
@@ -19,12 +19,15 @@ class AccountSettingNickname extends Component {
     render() {
         const { history } = this.props;
         return <div className="account_nickname">
-            <AppBar title="设置昵称"
+            <AppBar title="设置密码"
                     iconElementLeft={<IconButton><NavigationClose /></IconButton>}
-                    onLeftIconButtonTouchTap={()=>{history.push('/account/1')}}
+                    onLeftIconButtonTouchTap={()=>{history.goBack()}}
                     iconElementRight={<FlatButton label="保存"/>}/>
             <div className="input">
-                <TextField hintText="请输入昵称"
+                <TextField hintText="请输入原密码"
+                           hintStyle={{color:grey500}}
+                           inputStyle={{color:"#fff"}}/>
+                <TextField hintText="请输入新密码"
                            hintStyle={{color:grey500}}
                            inputStyle={{color:"#fff"}}/>
             </div>
@@ -36,4 +39,4 @@ function mapStateToProps(state) {
     return {chatRoomsNameList: state.chatRooms.chatRoomsNameList}
 }
 
-export default withRouter(connect(mapStateToProps)(AccountSettingNickname));
+export default withRouter(connect(mapStateToProps)(AccountSettingPassword));

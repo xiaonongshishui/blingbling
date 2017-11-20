@@ -13,6 +13,9 @@ import Hall from 'components/Hall/Hall';
 import Account from 'components/PersonalCenter/Account';
 import Messages from 'components/PersonalCenter/Messages';
 import AccountSettingNickname from 'components/PersonalCenter/AccountSettingNickname';
+import AccountSettingPassword from 'components/PersonalCenter/AccountSettingPassword';
+import ChatRoom from 'components/ChatRoom/ChatRoom';
+import UserList from 'components/ChatRoom/UserList';
 
 
 const muiTheme = getMuiTheme({
@@ -34,6 +37,9 @@ export default class App extends Component {
                         <Route path="/account/:userId" exact component={Account}/>
                         <Route path="/messages/:userId" component={Messages}/>
                         <Route path="/account/nickname/:userId" exact component={AccountSettingNickname}/>
+                        <Route path="/account/password/:userId"  component={AccountSettingPassword}/>
+                        <Route path="/chatRoom/:roomId"  component={ChatRoom}/>
+                        <Route path="/userList/:roomId"  component={UserList}/>
                     </div>
                 </Router>
             </Provider>

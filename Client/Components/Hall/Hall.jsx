@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {withRouter,Route, Link} from 'react-router-dom';
 import {cyan500} from 'material-ui/styles/colors';
 import AppBar from 'material-ui/AppBar';
 import PersonalCenter from '../PersonalCenter/PersonalCenter';
@@ -25,9 +26,12 @@ class Hall extends Component {
                     iconClassNameRight="muidocs-icon-navigation-expand-more"
                     onLeftIconButtonTouchTap={()=>{this.handleOpenDrawer(true)}}/>
             <section>
+                <Link to="/chatRoom/1">
                 <i className="play fa fa-play-circle"
                    style={{color: cyan500}}
-                   aria-hidden="true"/>
+                   aria-hidden="true"
+                />
+                </Link>
                 {
                     chatRoomsNameList.map((ele, index) => {
                         return <div key={index}
