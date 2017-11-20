@@ -1,6 +1,7 @@
-const Koa = require('koa');
-const app = new Koa();
+import Koa from 'koa';
+import user from './model.js';
 
+const app = new Koa();
 const PORT = process.env.PORT || 9999;
 
 app.use(async (ctx, next) => {

@@ -7,8 +7,8 @@
     "start": "npm run dev",
     "dev": "cross-env NODE_ENV=development node webpack.dev.js",
     "release": "cross-env NODE_ENV=production node webpack.release.js",
-    "dev-s": "cross-env NODE_ENV=development nodemon server/index.js --exec babel-node",
-    "build": "cross-env NODE_ENV=production babel server -d dist",
+    "dev-s": "cross-env NODE_ENV=development nodemon Server/index.js --exec babel-node",
+    "build": "cross-env NODE_ENV=production babel Server -d dist",
     "server": "cross-env NODE_ENV=production node dist/index.js",
     "test": "mocha --compilers js:babel-register"
   },
@@ -28,6 +28,7 @@
   "homepage": "https://github.com/xiaonongshishui/blingbling#readme",
   "dependencies": {
     "koa": "^2.4.1",
+    "mongoose": "^4.13.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
