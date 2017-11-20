@@ -1,5 +1,6 @@
 import http from 'http';
 import Koa from 'koa';
+import user from './model.js';
 
 const PORT = process.env.PORT || 9999;
 const app = new Koa()
@@ -12,8 +13,9 @@ const app = new Koa()
 
 // const Koa = require('koa')
 
-app.use( async ( ctx ) => {
-  ctx.body = 'hello koa2'
+app.use(async (ctx) => {
+    ctx.body = 'hello koa2'
+    console.log(user);
 })
 
 app.listen(PORT)

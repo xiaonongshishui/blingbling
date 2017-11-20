@@ -16,3 +16,6 @@ const chatRooms = {
     // tags: Array,
 
 };
+
+
+export default Users;
