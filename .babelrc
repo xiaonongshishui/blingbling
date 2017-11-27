@@ -4,7 +4,8 @@
     "transform-object-rest-spread",
     "transform-export-extensions",
     "transform-regenerator",
-    "transform-runtime"
+    "transform-runtime",
+    "syntax-dynamic-import"
   ],
   "sourceMaps": true
 }

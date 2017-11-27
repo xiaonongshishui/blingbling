@@ -1,7 +1,14 @@
 import http from 'http';
 import Koa from 'koa';
-import user from './model.js';
-
+if(1){
+    import('./model.js').then(a=>{
+        console.log(a);
+    });
+}else{
+    import('./test.js').then(a=>{
+        console.log(a);
+    });
+}
 const PORT = process.env.PORT || 9999;
 
 app.use(async (ctx, next) => {
