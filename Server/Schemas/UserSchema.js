@@ -1,8 +1,16 @@
 import mongoose from 'mongoose';
-import UserModal from '../Modals/User.js';
 
-
+const UserModal = {
+    ID: String,//BBID
+    username: String,
+    nickname: String,
+    psw: String,
+    createTime: Date,
+    lastChangeTime: Date,//update time
+    avatar: String,//avatar url
+    gender: Number,
+};
 
 const userSchema = mongoose.Schema(UserModal);
 
-export userSchema;
+export default userSchema;
