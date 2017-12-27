@@ -1,7 +1,6 @@
 import mongoose from 'mongoose';
 
 const UserModal = {
-    ID: String,//BBID
     username: String,
     nickname: String,
     psw: String,

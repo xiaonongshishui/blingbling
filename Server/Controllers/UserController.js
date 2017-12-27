@@ -4,11 +4,11 @@ import { UserModel } from '../Models';
 //add new user
 export const register = function (ctx, next) {
     console.log(ctx.request);
-    console.log(ctx.body);
+    console.log(ctx.request.body);
     let form = ctx.body;
     let userName = form.userName;
     let psw = form.psw;
-
+    
     //validate username
     const validateUserName = (userName)=>{ 
         return userName &&  !_.isNumber(userName);
