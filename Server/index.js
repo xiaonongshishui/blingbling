@@ -1,6 +1,7 @@
 
 import Koa from 'koa';
 import db from './db';
+import router from './router';
 
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
@@ -13,12 +14,14 @@ const app = new Koa();
 
 const PORT = process.env.PORT || 9999;
 
-app.use(async (ctx, next) => {
-    await next();
-    ctx.response.type = 'text/html';
-    ctx.response.body = '<h1>Hello, koa2!</h1>';
-});
-
+// app.use(async (ctx, next) => {
+//     await next();
+//     ctx.response.type = 'text/html';
+//     ctx.response.body = '<h1>Hello, koa2!</h1>';
+// });
+app
+.use(router.routes())
+.use(router.allowedMethods());
 
 
 app.listen(PORT);

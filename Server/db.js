@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const DB_URL = 'localhost:12345/helurong';
+const DB_URL = 'mongodb://localhost:12345/helurong';
 mongoose.connect(DB_URL,{
     useMongoClient:true
 });

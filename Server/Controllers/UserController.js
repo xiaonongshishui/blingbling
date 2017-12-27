@@ -1,5 +1,5 @@
 import _ from 'underscore';
-import UserModel from '../Models/UserModel.js';
+import { UserModel } from '../Models';
 
 //add new user
 export const register = function (ctx, next) {
@@ -15,7 +15,7 @@ export const register = function (ctx, next) {
     }
         
     //validate password
-    const validatePassword = (password) => { 
+    const validatePassword = (password) => {
         return password.length > 6 && password.length < 16;
     }
     
