@@ -2,13 +2,15 @@ import _ from 'underscore';
 import { UserModel } from '../Models';
 
 //add new user
-export const register = function (ctx, next) {
-    console.log(ctx.request);
-    console.log(ctx.request.body);
-    let form = ctx.body;
+export const register = (ctx, next) => {
+    console.log("ctx.request", ctx.request);
+    console.log("ctx headers",ctx.headers);
+    console.log("ctx.request.body", ctx.request.body);
+    
+    let form = ctx.request.body;
     let userName = form.userName;
     let psw = form.psw;
-    
+
     //validate username
     const validateUserName = (userName)=>{ 
         return userName &&  !_.isNumber(userName);
@@ -24,7 +26,7 @@ export const register = function (ctx, next) {
     }
 
     let user = new UserModel({
-        username: username,
+        username: userName,
         nickname: form.nickname,
         psw: psw,
         createTime: new Date().getTime(),
@@ -32,6 +34,17 @@ export const register = function (ctx, next) {
         avatar: "",//avatar url base64
         gender: undefined,
     });
+    user.save(function (err, res) {
+        
+        if (err) {
+            console.log("Error:" + err);
+        }
+        else {
+            console.log("Res:" + res);
+        }
+    });
+        
+    console.log('register success');
 };
 
 //get user

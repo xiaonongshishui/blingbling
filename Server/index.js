@@ -2,6 +2,7 @@
 import Koa from 'koa';
 import db from './db';
 import router from './router';
+import bodyParser from 'koa-bodyparser';
 
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
@@ -20,6 +21,7 @@ const PORT = process.env.PORT || 9999;
 //     ctx.response.body = '<h1>Hello, koa2!</h1>';
 // });
 app
+.use(bodyParser())
 .use(router.routes())
 .use(router.allowedMethods());
 
