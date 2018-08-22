@@ -10,6 +10,8 @@ const UserModal = {
     gender: Number,
 };
 
-const userSchema = mongoose.Schema(UserModal);
+const userSchema = mongoose.Schema(UserModal,
+    { timestamps: { createdAt: 'createTime', updateAt: 'lastChangeTime' } }
+);
 
 export default userSchema;

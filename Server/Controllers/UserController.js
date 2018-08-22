@@ -1,11 +1,11 @@
 import _ from 'underscore';
-import { UserModel } from '../Models';
+import { User } from '../Models';
 
 //add new user
-export const register = function (ctx, next) {
+export const register =  async (ctx, next) => {
     console.log(ctx.request);
     console.log(ctx.request.body);
-    let form = ctx.body;
+    let form = ctx.request.body;
     let userName = form.userName;
     let psw = form.psw;
     
@@ -20,18 +20,20 @@ export const register = function (ctx, next) {
     }
     
     if (!validateUserName(userName) || !validatePassword(psw)) { 
-        return false;
+        ctx.body = {status:false};
+        return await next()
     }
 
-    let user = new UserModel({
-        username: username,
+    let user = new User({
+        username: userName,
         nickname: form.nickname,
         psw: psw,
-        createTime: new Date().getTime(),
-        lastChangeTime: new Date().getTime(),//update time
         avatar: "",//avatar url base64
         gender: undefined,
     });
+    user.save()
+    ctx.body = user;
+    await next();
 };
 
 //get user
