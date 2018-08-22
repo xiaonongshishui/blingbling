@@ -9,6 +9,7 @@ export const register =  async (ctx, next) => {
     let userName = form.userName;
     let psw = form.psw;
     
+    
     //validate username
     const validateUserName = (userName)=>{ 
         return userName &&  !_.isNumber(userName);
