@@ -1,5 +1,6 @@
 
 import Koa from 'koa';
+import bodyparser from 'koa-bodyparser';
 import db from './db';
 import router from './router';
 import bodyParser from 'koa-bodyparser';
@@ -21,7 +22,7 @@ const PORT = process.env.PORT || 9999;
 //     ctx.response.body = '<h1>Hello, koa2!</h1>';
 // });
 app
-.use(bodyParser())
+.use(bodyparser())
 .use(router.routes())
 .use(router.allowedMethods());
 

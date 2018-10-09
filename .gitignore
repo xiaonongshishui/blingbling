@@ -3,3 +3,5 @@ Cache
 workspace.xml
 .idea
 /dist
+/data
+.vscode

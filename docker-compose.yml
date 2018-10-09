@@ -1,0 +1,12 @@
+version: '3'
+services:
+  bling-mongo:
+    image: 'mongo'
+    container_name: bling-mongo
+    ports:
+      - 12345:27017
+    volumes:
+      - './data/mongo:/data/db'
+      - './data/mongoconfigdb:/data/configdb'
+
+
