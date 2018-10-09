@@ -1,5 +1,5 @@
 import Router from 'koa-router';
-import { register } from './Controllers/UserController';
+import register from './Controllers/Users/register';
 
 const router = new Router();
 router.get('/',  (ctx, next) => {

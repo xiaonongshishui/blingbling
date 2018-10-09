@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {withRouter,Route, Link} from 'react-router-dom';
 import {cyan500} from 'material-ui/styles/colors';
 import AppBar from 'material-ui/AppBar';
-import PersonalCenter from '../PersonalCenter/PersonalCenter';
+import PersonalCenter from '../personal-center/PersonalCenter';
 
 class Hall extends Component {
     constructor(props) {

@@ -1,12 +1,13 @@
 import mongoose from 'mongoose';
 
-const ChatRoom = {
+const modal = {
     ID: String,//id
     name: String,//聊天室名
     createTime: Date,//注册时间
     // tags: Array,
 };
 
-const userSchema = mongoose.Schema(ChatRoom);
+const userSchema = mongoose.Schema(modal);
 
-export default userSchema;
+
+export const ChatRoomModel = mongoose.model('ChatRoom',ChatRoomScheme);

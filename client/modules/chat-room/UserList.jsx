@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {grey300, cyan50 , darkBlack} from 'material-ui/styles/colors';
 import {withRouter,Route, Link} from 'react-router-dom';
-import MobileTearSheet from '../MobileTearSheet';
+import MobileTearSheet from 'components/MobileTearSheet';
 import {List, ListItem} from 'material-ui/List';
 import Avatar from 'material-ui/Avatar';
 import AppBar from 'material-ui/AppBar';
@@ -16,7 +16,6 @@ class UserList extends Component {
     constructor(props) {
         super(props);
     }
-
 
     render() {
         const {history} = this.props;

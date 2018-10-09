@@ -4,9 +4,9 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlwebpackPlugin = require('html-webpack-plugin');
 //项目路径
 var ROOT_PATH = path.resolve(__dirname, './');
-var CLIENT_PATH = ROOT_PATH + '/Client';
-var DIST_PATH = ROOT_PATH + '/Dist';
-var CACHE_PATH = ROOT_PATH + '/Cache';
+var CLIENT_PATH = ROOT_PATH + '/client';
+var DIST_PATH = ROOT_PATH + '/dist';
+var CACHE_PATH = ROOT_PATH + '/cache';
 
 var __DEV__ = process.env.NODE_ENV === 'development';
 
@@ -59,11 +59,11 @@ var config = {
     },
     resolve: {
         alias: {
-            'components': CLIENT_PATH + '/Components',
-            'actions': CLIENT_PATH + '/Actions',
-            'reducers': CLIENT_PATH + '/Reducers',
-            'assets':CLIENT_PATH + '/Assets',
-            'images': CLIENT_PATH + '/Assets/images'
+            'components': CLIENT_PATH + '/components',
+            'actions': CLIENT_PATH + '/actions',
+            'reducers': CLIENT_PATH + '/reducers',
+            'assets':CLIENT_PATH + '/assets',
+            'images': CLIENT_PATH + '/assets/images'
         },
         extensions: [".jsx", ".js", ".json"]
     },
